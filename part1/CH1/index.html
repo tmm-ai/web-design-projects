@@ -1,0 +1,51 @@
+<!DOCTYPE>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+    <body>
+    <h1 id="title">Party Feedback Form</h1>
+    <p id="description">Please fill out this form with the required information so that future parties can be even better.</p>
+    <form id="survey-form" >
+            <fieldset>
+        <label id="name-label" for="first-name">Enter Your First Name: <input id="name" name="name" type="text" placeholder="your name here" required />
+        <label id="email-label" for="email">Enter Your Email: <input id="email" name="email" type="email" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" placeholder="your email@.com here" required />
+      <label id="number-label" for="number">Enter Your Favorite Number as an integer: <input id="number" name="name" min="0" max="99999" type="number" pattern="^\d{1,5}$"placeholder="between 1 and a million" </label>
+      </fieldset>
+      <fieldset>
+      <label for="dropdown">How did you hear about this party?
+  <select id="dropdown" name="dropdown">
+  <option value="">(select one)</option>
+<option value="5">Tom</option>
+<option value="6">God</option>
+  <option value="1">Shaun</option>
+  <option value="2">Milton</option>
+  <option value="3">Jennifer</option>
+  <option value="4">Other</option>
+          </select>
+        </fieldset>
+  <fieldset>
+        <legend>What did you bring to the party?</legend>
+        <label for="drinks"><input id="drinks" value="1" type="radio" name="contribution-type" class="inline" checked /> Drinks</label>
+        <label for="food"><input id="food" type="radio" value="2" name="contribution-type" class="inline" /> Food</label>
+
+    <label for="good vibes"><input id="good vibes" type="radio" value="3" name="contribution-type" class="inline" /> Good Vibes</label>
+      </fieldset>
+      <fieldset>
+  <legend>How could this party be improved?</legend>
+     <label for="more liquor"><input id="more liquor" value="1" type="checkbox" name="improvements" class="inline" /> More Liquor</label>
+         <label for="more pizzas"><input id="more pizzas" value="2" type="checkbox" name="improvements" class="inline" /> More Pizzas</label>
+    <label for="louder music"><input id="more music" type="checkbox" value="3"  name="improvements" class="inline" /> Louder Music</label>
+                 <label for="more dancing"><input id="more dancing" value="4" type="checkbox"  name=" improvements" class="inline" /> More Dancing</label>
+        </fieldset>
+  <fieldset>
+        <label for="improve">Tell us in detail how we can improve:
+          <textarea id="improve" name="bio" rows="3" cols="30" placeholder="More fresh caviar?..."></textarea>
+        </label>
+         </fieldset>
+      <input type="submit" value="Submit" id="submit" />
+    </form>
+  </body>
+</html>

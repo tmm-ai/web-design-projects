@@ -1,0 +1,25 @@
+img {
+    max-width: 100%; /* Ensures the image is responsive and scales based on its parent container's width */
+    height: auto; /* Maintains the aspect ratio of the image */
+    display: block; /* Since it's an image, block display is often more appropriate */
+    margin: 0 auto; /* Centers the image horizontally if its width is less than the container */
+  }
+  
+  #img-div {
+    display: flex;
+    flex-direction: column; /* This ensures items are stacked vertically */
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #img-caption {
+    text-align: center; /* This centers the caption text */
+    width: 100%; /* Ensures the caption can center its text based on the full width */
+  }
+  h1{
+    text-align: center
+  }
+  main {
+    background-color: lightgray;
+  }
+  

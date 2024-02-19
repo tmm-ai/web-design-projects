@@ -1,0 +1,74 @@
+/* Utility class to visually hide content but make it accessible to screen readers. */
+span[class~="sr-only"] {
+    border: 0 !important; /* Removes any borders. */
+    clip: rect(1px, 1px, 1px, 1px) !important; /* Clips the content to a tiny rectangle, effectively hiding it. */
+    clip-path: inset(50%) !important; /* Further hides the content by using a clip-path. */
+    height: 1px !important; /* Sets a tiny height to make it virtually invisible while still being accessible. */
+    width: 1px !important; /* Sets a tiny width for the same reason as height. */
+    position: absolute !important; /* Positions it out of the normal document flow. */
+    overflow: hidden !important; /* Ensures that the content does not overflow its tiny dimensions. */
+    white-space: nowrap !important; /* Prevents the content from wrapping, which is necessary for the clipping to work. */
+    padding: 0 !important; /* Removes any padding. */
+    margin: -1px !important; /* Uses negative margin to remove any potential space it could occupy. */
+}
+
+/* Sets the box-sizing for all elements to border-box, including inherited elements. This makes elements' dimensions include padding and border. */
+html {
+    box-sizing: border-box;
+}
+
+/* Base styles for the body element, setting the font family and primary text color. */
+body {
+    font-family: sans-serif; /* Sets a generic sans-serif font for the text. */
+    color: #0a0a23; /* Sets a deep blue color for the text. */
+}
+
+/* Styles for the main heading of the document. */
+h1 {
+    max-width: 37.25rem; /* Limits the width of the heading for better readability. */
+    margin: 0 auto; /* Centers the heading horizontally. */
+    padding: 1.5rem 1.25rem; /* Adds space around the text for better visibility. */
+}
+
+/* Applies flexbox layout to the span inside h1 for alignment and spacing of its child elements. */
+h1 .flex {
+    display: flex; /* Enables flexbox layout. */
+    flex-direction: column-reverse; /* Stacks items vertically in reverse order. */
+    gap: 1rem; /* Adds space between the flex items. */
+}
+
+/* Adjusts the font size of the first and last span elements inside the .flex container for visual hierarchy. */
+h1 .flex span:first-of-type {
+    font-size: 0.7em; /* Makes the first span smaller than normal text. */
+}
+
+h1 .flex span:last-of-type {
+    font-size: 1.2em; /* Makes the last span larger than normal text. */
+}
+
+/* Styles for the section element, setting its maximum width, centering it, and adding a border. */
+section {
+    max-width: 40rem; /* Limits the width for better readability. */
+    margin: 0 auto; /* Centers the section horizontally. */
+    border: 2px solid #d0d0d5; /* Adds a light grey border. */
+}
+
+/* Styles for the #years div, making it sticky at the top with a dark background and white text. */
+#years {
+    display: flex; /* Enables flexbox layout for inline elements. */
+    justify-content: flex-end; /* Aligns the child elements to the right. */
+    position: sticky; /* Makes the element stick at the top of the viewport when scrolling. */
+    z-index: 999; /* Ensures it stays above other content when scrolling. */
+    top: 0; /* Positions it at the very top of the viewport. */
+    background: #0a0a23; /* Sets a dark blue background color. */
+    color: #fff; /* Sets the text color to white for contrast. */
+    padding: 0.5rem calc(1.25rem + 2px) 0.5rem 0; /* Adds padding around the text, with a calculation for the right padding to align with the section border. */
+    margin: 0 -2px; /* Adjusts the margin to align precisely with the section borders. */
+}
+
+/* Boldens the text of spans within #years for emphasis and sets their width and text alignment. */
+#years span[class] {
+    font-weight: bold; /* Makes the year text bold. */
+    width: 4.5rem; /* Sets a specific width for each year span to maintain uniformity. */
+    text-align: right; /* Aligns the text to the right for consistency with the layout. */
+}
